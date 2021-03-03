@@ -1,6 +1,11 @@
 #!/usr/bin/bash
+
 nfiles=100
+if [[ $1 == "" ]]; then
+    echo You need to specify a output path
+    exit 1
+fi
 for ((i=0;i<$nfiles;i++))
 do 
-	./src/generate_sinogram_imgseg.py ./data_sinograms/streaking.${i}.${HOSTNAME} 100 &
+	python ./src/generate_sinogram.py "$1/streaking.${i}.${HOSTNAME}" 100 &
 done
