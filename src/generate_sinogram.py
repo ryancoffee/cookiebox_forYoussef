@@ -34,7 +34,7 @@ def main():
     for i in range(nimages):
         img = h5f.create_group('img%05i'%i)
 
-        img.attrs['npulses'] = int(np.random.uniform(1,4))
+        img.attrs['npulses'] = np.random.choice(np.arange(1,5))
         img.attrs['esase'] = np.random.normal(ecentral,etotalwidth,(img.attrs['npulses'],))
         img.attrs['ewidths'] = np.random.gamma(1.5,.125,(img.attrs['npulses'],))+.5
         img.attrs['ephases'] = np.random.uniform(0.,2.*np.pi,(img.attrs['npulses'],))
