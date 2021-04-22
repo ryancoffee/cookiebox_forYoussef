@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-nfiles=100
+nfiles=200
 if [[ $1 == "" ]]; then
     echo You need to specify a output path
     exit 1
